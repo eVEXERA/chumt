@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from Process.filters import command, other_filters
 from Process.decorators import sudo_users_only, errors
 
-downloads = os.path.realpath("RaiChu/Player/downloads")
+downloads = os.path.realpath("RaiChu/downloads")
 raw = os.path.realpath(".")
 
 @Client.on_message(command(["rmd", "clear"]) & ~filters.edited)
