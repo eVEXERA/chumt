@@ -13,7 +13,7 @@ import ffmpeg
 import requests
 from Process.fonts import CHAT_TITLE
 from PIL import Image, ImageDraw, ImageFont
-from RaiChu.config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2
+from RaiChu.config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2, IMG_5
 from Process.filters import command, other_filters
 from Process.queues import QUEUE, add_to_queue
 from Process.main import call_py, user
@@ -133,14 +133,17 @@ async def play(c: Client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
     keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("• Mᴇɴᴜ", callback_data="cbmenu"),
-                InlineKeyboardButton(
-                    "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/DeCodeSupport"),
-            ]
-        ]
-    )
+                  [[
+                      InlineKeyboardButton("⏹", callback_data="cbstop"),
+                      InlineKeyboardButton("⏸", callback_data="cbpause"),
+                      InlineKeyboardButton("▶️", callback_data="cbresume"),
+                  ],[
+                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/DeeCoDeBots"),
+                      InlineKeyboardButton("• Group", url=f"https://t.me/DeCodeSupport"),
+                  ],[
+                      InlineKeyboardButton("🗑 Close", callback_data="cls")],
+                  ]
+             )
     if m.sender_chat:
         return await m.reply_text("you're an __Anonymous__ Admin !\n\n» revert back to user account from admin rights.")
     try:
@@ -243,11 +246,26 @@ async def play(c: Client, m: Message):
         
     else:
         if len(m.command) < 2:
-            await m.reply(
-                "[💬](https://telegra.ph/file/c3401a572375b569138c3.jpg) Usage: /play Give a Title Song To Play Music or /vplay for Video Play."
+         await m.reply_photo(
+                     photo=f"{IMG_5}",
+                    caption="💬**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**"
+                    ,
+                      reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/RaichuUpdate"),
+                            InlineKeyboardButton("💭 Support", url=f"https://t.me/DeCodeSupport")
+                        ],
+                        [
+                            InlineKeyboardButton("🗑 Close", callback_data="cls")
+                        ]
+                    ]
+                )
             )
         else:
-            suhu = await m.reply_sticker("CAACAgEAAx0CaJS8_QACDlVh6Hw2qMTk12qm4vElSE2mh1v3xgACoAMAAlEpDTlVVO5mGIjAKCME")
+            suhu = await m.reply_text(
+        f"**Yuriko Downloader**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+    )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
