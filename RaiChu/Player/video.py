@@ -1,7 +1,7 @@
 import re
 import asyncio
 
-from RaiChu.config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2
+from RaiChu.config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2, IMG_6
 from RaiChu.inline import stream_markup
 from Process.design.thumbnail import thumb
 from Process.design.chatname import CHAT_TITLE
@@ -175,9 +175,22 @@ async def vplay(c: Client, m: Message):
                 )
         else:
             if len(m.command) < 2:
-                await m.reply(
-                    "» reply to an **video file** or **give something to search.**"
+                await m.reply_photo(
+                     photo=f"{IMG_6}",
+                    caption="💬**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**"
+                    ,
+                      reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/TeamOfShadow"),
+                            InlineKeyboardButton("💭 Support", url=f"https://t.me/ShadowSupport_Official")
+                        ],
+                        [
+                            InlineKeyboardButton("🗑 Close", callback_data="cls")
+                        ]
+                    ]
                 )
+            )
             else:
                 loser = await c.send_message(chat_id, "🔍 **Searching...**")
                 query = m.text.split(None, 1)[1]
@@ -239,8 +252,21 @@ async def vplay(c: Client, m: Message):
 
     else:
         if len(m.command) < 2:
-            await m.reply(
-                "» reply to an **video file** or **give something to search.**"
+            await m.reply_photo(
+                     photo=f"{IMG_6}",
+                    caption="💬**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**"
+                    ,
+                      reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/TeamOfShadow"),
+                            InlineKeyboardButton("💭 Support", url=f"https://t.me/ShadowSupport_Official")
+                        ],
+                        [
+                            InlineKeyboardButton("🗑 Close", callback_data="cls")
+                        ]
+                    ]
+                )
             )
         else:
             loser = await c.send_message(chat_id, "🔍 **Searching...**")
