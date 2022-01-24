@@ -138,8 +138,8 @@ async def play(c: Client, m: Message):
                       InlineKeyboardButton("⏸", callback_data="cbpause"),
                       InlineKeyboardButton("▶️", callback_data="cbresume"),
                   ],[
-                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/TeamOfShadow"),
-                      InlineKeyboardButton("• Group", url=f"https://t.me/ShadowSupport_Official"),
+                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/SUPERIOR_BOTS"),
+                      InlineKeyboardButton("• Group", url=f"https://t.me/SUPERIOR_SUPPORT"),
                   ],[
                       InlineKeyboardButton("🗑 Close", callback_data="cls")],
                   ]
@@ -253,8 +253,8 @@ async def play(c: Client, m: Message):
                       reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/TeamOfShadow"),
-                            InlineKeyboardButton("💭 Support", url=f"https://t.me/ShadowSupport_Official")
+                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/SUPERIOR_BOTS"),
+                            InlineKeyboardButton("💭 Support", url=f"https://t.me/SUPERIOR_SUPPORT")
                         ],
                         [
                             InlineKeyboardButton("🗑 Close", callback_data="cls")
@@ -264,7 +264,7 @@ async def play(c: Client, m: Message):
             )
         else:
             suhu = await m.reply_text(
-        f"**Shadow Downloader**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+        f"**Shopia Downloader**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
     )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
