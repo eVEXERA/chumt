@@ -4,7 +4,7 @@ ffmpeg-python
 py-tgcalls
 git+https://github.com/pyrogram/pyrogram@master
 youtube-search-python
-yt-dlp
+
 speedtest-cli
 git+https://github.com/ytdl-org/youtube-dl@master
 youtube-search
