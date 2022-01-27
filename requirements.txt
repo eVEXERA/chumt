@@ -3,8 +3,10 @@ asyncio
 ffmpeg-python
 py-tgcalls
 git+https://github.com/pyrogram/pyrogram@master
-youtube-search-python==1.4.9
-git+https://github.com/yt-dlp/yt-dlp@master
+youtube-search-python
+yt-dlp
+speedtest-cli
+git+https://github.com/ytdl-org/youtube-dl@master
 youtube-search
 python-dotenv
 dnspython
@@ -13,9 +15,9 @@ aiofiles
 aiohttp
 requests
 pillow
-heroku3
 motor
 psutil
 future
 wget
-youtube-dl==2021.12.17
+lyricsgenius
+yt-dlp==2021.11.10.1
